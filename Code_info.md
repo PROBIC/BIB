@@ -44,7 +44,7 @@ Here, the first parameter is the name of the sequence from which the index has t
 The read files can be aligned to the reference index once it has finished being constructed. The command for this is :
 ``bowtie2 core_alignment_gapless read_file.fastq -S alignment_file.sam -a ``
 
-The input files are the reference index and the read file while the output file is the list of alignments for every read to every genome. The different parameters that can be included for this command are given [here](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#getting-started-with-bowtie-2-lambda-phage-example).
+The input files are the reference index and the read file while the output file is the list of alignments for every read to every genome. The different parameters that can be included for this command are given [here](http://bowtie-bio.sourceforge.net/bowtie2/manual.shtml#the-bowtie2-aligner).
 
 ### Estimation of strains and their abundances
 
