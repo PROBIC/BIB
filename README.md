@@ -65,7 +65,7 @@ The second step estimates the relative transcript expression using a VB algorith
 
 The sampler produces the file abundance.m_alphas which contains three columns. The first one corresponds to the estimated relative transcript expression levels (mean theta). The next two columns contain the parameters of the marginal Beta distribution describing the estimated distribution per transcript (alpha, beta). The resulting file will contains M lines, one for each transcript.
 
-#Abundance estimation pipeline
+##Abundance estimation pipeline
 
 The alignment of the reads to the reference index and the estimation of the abundances of the strains from this alignment can be executed in a single step for multiple experiments by running the provided pipeline scripts as follows :
 
