@@ -58,6 +58,6 @@ The alignment file produced in the previous step along with the gapless alignmen
 
 The second step estimates the relative transcript expression using a VB algorithm with the .prob file taken as the input.
 
-``BitSeq/estimateVBExpression -o Aaundance alignment_info.prob -t genome_info.tr``
+``BitSeq/estimateVBExpression -o abundance alignment_info.prob -t genome_info.tr``
 
 The sampler produces the file abundance.m_alphas which contains three columns. The first one corresponds to the estimated relative transcript expression levels (mean theta). The next two columns contain the parameters of the marginal Beta distribution describing the estimated distribution per transcript (alpha, beta). The resulting file will contains M lines, one for each transcript.
