@@ -67,17 +67,15 @@ The sampler produces the file abundance.m_alphas which contains three columns. T
 
 ##Abundance estimation pipeline
 
-If the reference genomes are available, the core genomes can be extracted from them using the preprocessing script. The reference index can also be constructed using this script. The input parameters in the script can be altered as needed by the user.
+If the core genomes are available, the reference index necessary for abundance estimation can be created from it using the **`BIB_prepare_index`** file. The input required for this script are the set of core genomes and the name of the index to be generated.  For example, if the core genome file is called *core_genomes.fasta* and if the user wants the name of the index to be *`core_reference_index`*, then the command must be given as follows :
 
-The alignment of the reads to the reference index and the estimation of the abundances of the strains from this alignment can be executed in a single step for multiple experiments by running the provided pipeline scripts as follows :
+``python BIB_prepare_index.py core_genomes.fasta core_reference_index``
 
-``python pipeline_input.py``
+The alignment of the reads to this reference index and the estimation of the abundances of the strains from this alignment can then be estimated using the **`BIB_analyse_reads`** file. The input required for this script are the name of the readset, the core genomes used for the construction of the index and the name of the index. For example, if the readset is called *Sample_set.fastq*, the core genome file used for the creation of the index is called *core_genome.fasta* and the generated index is called *`core_reference_index`*, then the command must be given as follows :
 
-The pipeline_input script in turn calls the pipeline script for all the read sets given within the script. Additional read sets can be added by including the following line in the script.
+``python BIB_analyse_reads.py Sample_set.fastq core_genome.fasta core_reference_index``
 
-``python pipeline.py new_readset.fastq``
-
-The pipeline script aligns the given reads to a pre-constructed reference index. This index can be specified as required on line 13 of the pipeline.py file. The alignment is then directly used by the script to estimate the abundances using Bitseq as specified above. The output files produced contain the predicted abundances of the strains. These files have the same name as the readset files given as the input in the pipeline_input script.
+The output files produced contain the predicted abundances of the strains. These files will have the same name as the name of the readset given as the input to the script. For the above example, the output file would be produced as `*Sample_set.m_alpha*`.
 
 
 
