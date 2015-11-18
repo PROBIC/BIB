@@ -75,7 +75,7 @@ The alignment of the reads to this reference index and the estimation of the abu
 
 ``python BIB_analyse_reads.py Sample_set.fastq core_genome.fasta core_reference_index``
 
-The output files produced contain the predicted abundances of the strains. These files will have the same name as the name of the readset given as the input to the script. For the above example, the output file would be produced as `*Sample_set.m_alpha*`.
+The output files produced contain the predicted abundances of the strains. These files will have the same name as the name of the readset given as the input to the script. For the above example, the output file would be produced as *`Sample_set.m_alpha`*.
 
 
 
