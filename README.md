@@ -67,6 +67,8 @@ The sampler produces the file abundance.m_alphas which contains three columns. T
 
 ##Abundance estimation pipeline
 
+If the reference genomes are available, the core genomes can be extracted from them using the preprocessing script. The reference index can also be constructed using this script. The input parameters in the script can be altered as needed by the user.
+
 The alignment of the reads to the reference index and the estimation of the abundances of the strains from this alignment can be executed in a single step for multiple experiments by running the provided pipeline scripts as follows :
 
 ``python pipeline_input.py``
