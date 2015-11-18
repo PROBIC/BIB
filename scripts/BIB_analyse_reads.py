@@ -1,7 +1,7 @@
 import sys
 import os
 from subprocess import call
-#Obtain readset name and index name from the command line
+#Obtain readset name, core genome sequence name and index name from the command line.
 argu = sys.argv[1]
 core_genome = sys.argv[2]
 index_name = sys.argv[3]
