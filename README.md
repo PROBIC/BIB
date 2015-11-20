@@ -21,9 +21,9 @@ generated.  For Staphylococcus aureus, the core genomes are provided as
 
 The alignment of the reads to this reference index and the estimation of the abundances of the strains from this alignment can then be estimated using the **`scripts/BIB_analyse_reads.py`** script. The input required for this script are the name of the readset, the core genomes used for the construction of the index and the name of the index. For example, if the readset is called *Sample_set.fastq*, the core genome file used for the creation of the index is called *input/Aureus_core.fasta* and the generated index is called *`input/Aureus_core`*, then the command must be given as follows :
 
-``python scripts/BIB_analyse_reads.py Sample_set.fastq Aureus_core.fasta Aureus_core``
+``python scripts/BIB_analyse_reads.py Sample_set.fastq Aureus_core.fasta Aureus_core Sample_set_result``
 
-The output files produced contain the predicted abundances of the strains. These files will have the same name as the name of the readset given as the input to the script. For the above example, the output file would be produced as *`Sample_set.m_alphas`*.
+The output files produced contain the predicted abundances of the strains. These files will have the same name as the name of the readset given as the input to the script. For the above example, the output file would be produced as *`Sample_set_result.m_alphas`*.
 
 
 ##General BIB pipeline
