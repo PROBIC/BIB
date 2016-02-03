@@ -23,7 +23,9 @@ The alignment of the reads to this reference index and the estimation of the abu
 
 ``python scripts/BIB_analyse_reads.py Sample_set.fastq Aureus_core.fasta Aureus_core Sample_set_result``
 
-The output files produced contain the predicted abundances of the strains. These files will have the same name as the name of the readset given as the input to the script. For the above example, the output file would be produced as *`Sample_set_result.m_alphas`*.
+The output files produced contain the predicted abundances of the strains. These files will have the same name as the name of the readset given as the input to the script. For the above example, the output file would be produced as *`Sample_set_result.m_alphas`*. A more easily interpretable version of the output can be obtained by running:
+
+``python scripts/BIB_parse_output.py Sample_set_result``
 
 
 ##General BIB pipeline
