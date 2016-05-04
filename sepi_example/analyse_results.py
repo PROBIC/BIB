@@ -6,6 +6,7 @@ from tqdm import tqdm
 import numpy as np
 from openpyxl import load_workbook
 import matplotlib.pyplot as plt
+import pandas as pd
 
 REFERENCEPATH = "/cs/work/scratch/ahonkela/bib/sepi/reference"
 READPATH = "/cs/work/scratch/ahonkela/bib/sepi/Meric2015"
@@ -21,6 +22,11 @@ def read_table(fname, comment='#', sep=' '):
                 continue
             lines.append(l.strip().split(sep))
     return np.array(lines)
+
+def write_table(table, fname, sep='\t'):
+    with open(fname, 'w') as f:
+        for t in table:
+            print(sep.join(["%.2f" % x for x in t]), file=f)
 
 def read_sample_mapping():
     wb = load_workbook(SAMPLEINFO)
@@ -79,10 +85,10 @@ def read_results(index):
     refstrains = [int(x) for x in trs[:,1]]
     samplestrains = [ids[x] for x in samples]
     I = np.array(list(filter(lambda x: samplestrains[x] not in refstrains, range(len(samples)))))
-    return trueclthetas[I], otherthetas[I,:]
+    return trueclthetas[I], otherthetas[I,:], pd.DataFrame(np.stack(thetas, axis=1)[:,I].T, index=np.array(samples)[I])
 
-x1, y1 = read_results(0)
-x2, y2 = read_results(1)
+x1, y1, z1 = read_results(0)
+x2, y2, z2 = read_results(1)
 
 trueclthetas = [x1, x2]
 otherthetas = [y1, y2]
@@ -92,3 +98,6 @@ plt.savefig("sepi_results.pdf")
 
 for x, y in zip(trueclthetas, otherthetas):
     print(np.sum(np.max(y, 1) < x), '/', len(x))
+
+z1.to_csv("sepi_results_3_clusters.txt", '\t', float_format="%.2f", header=False)
+z2.to_csv("sepi_results_11_clusters.txt", '\t', float_format="%.2f", header=False)
