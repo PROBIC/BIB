@@ -2,6 +2,19 @@
 Bayesian Identification of Bacteria
 
 
+## More about the method and references
+
+The BIB method is presented in
+A. Sankar, B. Malone, S. C. Bayliss, B. Pascoe, G. Méric, M. D. Hitchings, S. K. Sheppard, E. J. Feil, J. Corander and A. Honkela.
+[Bayesian identification of bacterial strains from sequencing data](http://dx.doi.org/10.1099/mgen.0.000075).
+Microbial genomics 2 (2016).
+
+The inference method is based on BitSeqVB which is presented in
+J. Hensman, P. Papastamoulis, P. Glaus, A. Honkela and M. Rattray.
+[Fast and accurate approximate inference of transcript expression from RNA-seq data](http://dx.doi.org/10.1093/bioinformatics/btv483).
+Bioinformatics 31(24):3881-3889 (2015).
+
+
 ##Quick start for BIB for Staphylococcus aureus and Staphylococcus epidermidis
 
 The following tools are required for the pipeline :
